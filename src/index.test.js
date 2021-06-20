@@ -1,7 +1,18 @@
-const { foo } = require('./index');
+const { Node } = require('./index');
 
-test('foo function to testing set up environment', () => {
-  const actual = foo('bar');
+describe('Basic binary tree node features', () => {
 
-  expect(actual).toMatch('foo bar');
-});
+  it('init node and get the values of it', () => {
+    const simpleNode = new Node(1);
+
+    const nodeValue = simpleNode.value;
+    const nodeLeft = simpleNode.left;
+    const nodeRight = simpleNode.right;
+
+    expect(nodeValue).toBe(1);
+    expect(nodeLeft).toBeNull();
+    expect(nodeRight).toBeNull();
+  });
+})
+
+
