@@ -1,0 +1,12 @@
+node_modules/
+
+.vscode/
+
+*.swp
+**/*.swp
+
+*.swo
+**/*.swo
+
+*.swn
+**/*.swn
