@@ -1,4 +1,8 @@
-const { Node, TreeMap } = require('./index');
+const {
+  Node,
+  TreeMap,
+  BinarySearchTree
+} = require('./index');
 
 describe('Basic binary tree node features', () => {
 
@@ -32,4 +36,24 @@ describe('TreeMap features', () => {
   });
 });
 
+describe('BST features', () => {
 
+  describe('Overwriten functions should not be null', () => {
+    
+    const bst = new BinarySearchTree();
+
+    expect(bst.insert()).not.toBeNull();
+    expect(bst.insertNode()).not.toBeNull();
+    expect(bst.inorder()).not.toBeNull();
+  });
+
+  describe('insert', () => {
+    it('if the bst is empty', () => {
+      bst.insert(42);
+
+      const actual = bst.root;
+
+      expect(actual).toBe(42);
+    });
+  });
+});
