@@ -1,4 +1,4 @@
-const { Node } = require('./index');
+const { Node, TreeMap } = require('./index');
 
 describe('Basic binary tree node features', () => {
 
@@ -13,6 +13,23 @@ describe('Basic binary tree node features', () => {
     expect(nodeLeft).toBeNull();
     expect(nodeRight).toBeNull();
   });
-})
+});
+
+describe('TreeMap features', () => {
+
+  it('Just basic implemetation to overwrite in extending', () => {
+    const treeMap = new TreeMap();
+
+    treeRoot = treeMap.root;
+    insertResult = treeMap.insert();
+    insertNodeResult = treeMap.insertNode();
+    inorderResult = treeMap.inorder();
+
+    expect(treeRoot).toBeNull();
+    expect(insertResult).toBeNull();
+    expect(insertNodeResult).toBeNull();
+    expect(inorderResult).toBeNull();
+  });
+});
 
 
