@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "test-watch": "jest --watch"
   },
   "repository": {
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/tothricsaj/tree-data-practice#readme",
   "devDependencies": {
+    "coveralls": "^3.1.0",
     "jest": "^27.0.4"
   }
 }
