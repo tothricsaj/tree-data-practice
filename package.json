@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "test": "jest --coverage",
+    "test:ci": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "test-watch": "jest --watch"
   },
   "repository": {
