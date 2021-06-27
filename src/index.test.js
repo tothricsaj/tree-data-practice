@@ -155,4 +155,40 @@ describe('BST features', () => {
       expect(one).toBe(1);
     });
   });
+
+  describe('inorder', () => {
+    it('Go through the entire BST with callback funciton', () => {
+
+      //       8
+      //     /   \
+      //    3     10
+      //   / \   /  \
+      //  1  4  9   12 
+
+      let dataArr = [];
+      const expectedArr = [1,3,4,8,9,10,12];
+
+      const cb = (dataArr) => {
+        return (data) => {
+          dataArr.push(data);
+        }
+      }
+
+      const orderingBST = new BinarySearchTree();
+
+      orderingBST.insert(8);
+      orderingBST.insert(10);
+      orderingBST.insert(3);
+      orderingBST.insert(4);
+      orderingBST.insert(1);
+      orderingBST.insert(12);
+      orderingBST.insert(9);
+
+      const root = orderingBST.root;
+
+      orderingBST.inorder(root, cb(dataArr));
+
+      expect(dataArr).toEqual(expectedArr);
+    });
+  });
 });

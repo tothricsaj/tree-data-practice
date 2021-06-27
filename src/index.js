@@ -49,8 +49,16 @@ class BinarySearchTree extends TreeMap {
     return true;
   }
 
-  inorder() {
-    // TODO: implement feature
+  inorder(node, fn) {
+
+    if(node === undefined) return;
+
+    if(node !== null) {
+        this.inorder(node.left, fn);
+        fn(node.value);
+        this.inorder(node.right, fn);
+    }
+
     return true;
   }
 }
