@@ -168,9 +168,7 @@ describe('BST features', () => {
       orderingBST.insert(12);
       orderingBST.insert(9);
 
-      const root = orderingBST.root;
-
-      orderingBST.inorder(root, cb(dataArr));
+      orderingBST.inorder(cb(dataArr));
 
       expect(dataArr).toEqual(expectedArr);
     });

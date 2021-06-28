@@ -72,11 +72,11 @@ class RedBlackTree extends TreeMap {
     return node;
   }
 
-  inorder(node = this.root) {
-    if (node == null) return;
-    this.inorder(node.left);
-    console.log(node.key);
-    this.inorder(node.right);
+  inorder(fn, node = this.root) {
+    if(node === undefined || typeof(fn) !== 'function') return;
+    this.inorder(fn, node.left);
+    fn(node.value);
+    this.inorder(fn, node.right);
   }
 }
 
