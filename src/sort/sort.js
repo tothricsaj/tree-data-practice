@@ -17,7 +17,7 @@ function sortData(tree, data, property) {
 	});
 
 	while(dataIndex < data.length) {
-		if(orderedSalary[dataIndex] === data[propertyIndex].salary) {
+		if(orderedSalary[dataIndex] === data[propertyIndex][property]) {
 			orderedData.push(data[propertyIndex]);
 			dataIndex++;
 			propertyIndex = 0;
@@ -34,6 +34,11 @@ function sortBySalary(tree, data) {
 	return sortData(tree, data, 'salary');
 }
 
+function sortByName(tree, data) {
+	return sortData(tree, data, 'name');
+}
+
 module.exports = {
-	sortBySalary: sortBySalary
+	sortBySalary: sortBySalary,
+	sortByName: sortByName
 };
