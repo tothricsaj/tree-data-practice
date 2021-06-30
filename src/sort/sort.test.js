@@ -1,6 +1,6 @@
 const { BinarySearchTree } = require('../BinarySearchTree/BinarySearchTree');
 const { RedBlackTree } = require('../RedBlackTree/RedBlackTree');
-const { sortBySalary } = require('./sortBySalary');
+const { sortBySalary } = require('./sort');
 
 describe('sortBySalary features', () => {
 	const data = [
