@@ -73,9 +73,15 @@ class RedBlackTree extends TreeMap {
   }
 
   inorder(fn, node = this.root) {
+
+    if(!node) {
+      return;
+    }
+
     if(node === undefined || typeof(fn) !== 'function') return;
+
     this.inorder(fn, node.left);
-    fn(node.value);
+    fn(node.key);
     this.inorder(fn, node.right);
   }
 }
@@ -83,9 +89,12 @@ class RedBlackTree extends TreeMap {
 // let rbt = new RedBlackTree();
 // let ary = [5, 3, 6, 8, 4, 2];
 
+
 // ary.forEach(value => rbt.insert(value));
 
-// rbt.inorder();
+// console.log('rbt -> ', rbt);
+
+// rbt.inorder((value) => console.log(value));
 
 module.exports = {
   Node,

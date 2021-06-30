@@ -25,5 +25,5 @@ describe('RBT features', () => {
     expect(rbt.insertNode()).not.toBeNull();
     expect(rbt.inorder()).not.toBeNull();
   });
-
+  
 });
