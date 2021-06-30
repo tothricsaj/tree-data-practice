@@ -1,13 +1,15 @@
-function sortBySalary(tree, data) {
+const getProperData = (data, property) => data.map(el => el[property]);
+
+function sortData(tree, data, property) {
 	const orderedSalary = [];
 	const orderedData = [];
-	const salaryArr = data.map(el => el.salary);
+	const properDataArr = getProperData(data, property);
 
 	let dataIndex = 0;
-	let salaryIndex = 0;
+	let propertyIndex = 0;
 
-	salaryArr.forEach(salary => {
-		tree.insert(salary);
+	properDataArr.forEach(el => {
+		tree.insert(el);
 	});
 
 	tree.inorder(salary => {
@@ -15,17 +17,21 @@ function sortBySalary(tree, data) {
 	});
 
 	while(dataIndex < data.length) {
-		if(orderedSalary[dataIndex] === data[salaryIndex].salary) {
-			orderedData.push(data[salaryIndex]);
+		if(orderedSalary[dataIndex] === data[propertyIndex].salary) {
+			orderedData.push(data[propertyIndex]);
 			dataIndex++;
-			salaryIndex = 0;
+			propertyIndex = 0;
 
 			continue;
 		}
-		salaryIndex++;
+		propertyIndex++;
 	}
 
 	return orderedData;
+}
+
+function sortBySalary(tree, data) {
+	return sortData(tree, data, 'salary');
 }
 
 module.exports = {
